@@ -11,7 +11,7 @@ console.log(filters.divider(values))
 // values.filter(isMajorFive)
 console.log(filtered)
 
-for (let index = 0; index < array.length; index++) {
+for (let index = 0; index < values.length; index++) {
     const element = array[index];
     
 }

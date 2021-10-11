@@ -5,7 +5,7 @@ const removeButton = document.getElementById("remove-button")
 
 const tasksList = document.getElementById("tasks-list")
 
-const tasks = [];
+
 
 addButton.addEventListener('click', () => {
     const value = input.value
@@ -28,16 +28,33 @@ addButton.addEventListener('click', () => {
     li.append(checkbox, span);
 
 
-    li.setAttribute('id', `task-${tasks.length}`)
-    tasks.push(li)
+    // li.setAttribute('id', `task-${tasks.length}`)
 
     tasksList.appendChild(li);
 
     input.value = "";
 
-    console.log(tasks)
+
 })
 
 removeButton.addEventListener('click', () => {
-    
+    // task1: tener acceso a las tareas
+    const tasks = tasksList.querySelectorAll('li')
+    console.log(tasks)
+
+    // task2: recorrer el array de tasks
+    // task3: tengo que filtrar las tareas con checked en true
+    // task4: eliminar esas tareas filtradas
+
+    const elementsFiltered = []
+    tasks.forEach(task => {
+        if (task.childNodes[0].checked) {
+            // tasksList.removeChild(task)
+            task.remove()
+        }
+    })
+
+    console.log("ALBANO QUERIA SABER", tasks)
+    console.log("ALBANO QUERIA SABER", tasksList)
+
 })
